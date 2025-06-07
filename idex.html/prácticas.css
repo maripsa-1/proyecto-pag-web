@@ -1,0 +1,647 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Light gradient background */
+    color: #333; /* Darker text for readability */
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2c3e50; /* Dark blue, professional */
+    color: #ffffff;
+    padding: 3rem 0; /* Increased vertical padding for a larger header */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 0; /* Remove margin-bottom to make it flush with the carousel */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 3.5em; /* Larger heading */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow for impact */
+}
+
+.header p {
+    font-size: 1.4em; /* Larger subheading */
+    opacity: 0.9;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+/* Main Container Styles */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Limits width for better readability on large screens */
+    margin: 0 auto; /* Remove top margin to pull it up */
+    padding: 0 0 2rem 0; /* Remove top padding, keep bottom */
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px; /* Rounded corners only at the bottom */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+/* Carousel Section - Make it visually dominant */
+.carrusel {
+    overflow: hidden;
+    border-radius: 0; /* Remove border radius at top to be flush with header */
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    position: relative;
+    max-height: 60vh; /* Make the carousel take up a significant portion of the viewport height */
+    min-height: 350px; /* Ensure a minimum height */
+    display: flex; /* Helps with vertical alignment of image */
+    align-items: center; /* Center image vertically if it doesn't fill height */
+    justify-content: center; /* Center image horizontally */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    animation: slideAnimation 15s infinite alternate;
+    height: 100%; /* Ensure slider takes full height of carousel */
+    width: 100%; /* Ensure slider takes full width of carousel */
+}
+
+.slider img {
+    width: 100%;
+    height: 100%; /* Make images fill the height of the slider */
+    display: block;
+    border-radius: 0; /* Remove border radius */
+    object-fit: cover; /* Ensures images cover the area without distortion, cropping as needed */
+}
+
+/* Keyframe animation for slider */
+@keyframes slideAnimation {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(-300%); }
+}
+
+
+/* Section Styling (General) - These will now appear below the prominent header/carousel */
+section {
+    background-color: #f9f9f9;
+    padding: 1.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #3498db; /* A vibrant blue accent */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+section:first-of-type { /* Adjust the first section (descripcion) to have top padding again */
+    padding-top: 2rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+section h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd; /* Subtle underline */
+    padding-bottom: 0.5rem;
+}
+
+/* Description Section */
+.descripcion p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Tareas Section */
+.tareas ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.tareas li {
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #eee; /* Light dashed separator */
+    font-size: 1.05em;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+
+.tareas li:last-child {
+    border-bottom: none;
+}
+
+.tareas li::before {
+    content: '✅'; /* Custom bullet point */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Horarios Section */
+.horarios p {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.horarios strong {
+    color: #3498db; /* Highlight days with accent color */
+}
+
+/* Creditos Section */
+.creditos {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9; /* Consistent background */
+    border-left: none; /* Remove left border for this section */
+    box-shadow: none; /* Remove shadow for a cleaner footer look */
+    border-bottom-left-radius: 10px; /* Ensure bottom rounded corners */
+    border-bottom-right-radius: 10px;
+}
+
+.creditos p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.creditos strong {
+    color: #2c3e50;
+}
+
+/* Button Styling (General) */
+.boton {
+    display: inline-block;
+    background-color: #3498db; /* Blue button */
+    color: #ffffff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+}
+
+.boton:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.boton:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific button group for info buttons */
+.botones-interactivos .button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 1rem;
+}
+
+.botones-interactivos .boton-info {
+    background-color: #28a745; /* Green for info buttons */
+    color: #ffffff;
+    padding: 1rem 2rem; /* Larger padding for these buttons */
+    font-size: 1.2em;
+    text-align: center; /* Ensure text is centered */
+}
+
+.botones-interactivos .boton-info:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Logo button styling */
+.logo-empresa {
+    text-align: center;
+    border-left: none; /* No left border here */
+}
+
+.logo-empresa .boton-logo {
+    display: flex; /* Allows logo and text to be side-by-side */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center content horizontally */
+    background-color: #6c757d; /* Gray for institutional button */
+    color: #ffffff;
+    padding: 1rem 2.5rem; /* Ample padding */
+    font-size: 1.3em; /* Larger font size */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow for main action */
+}
+
+.logo-empresa .boton-logo:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+    transform: translateY(-3px); /* Stronger lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.company-logo {
+    width: 40px; /* Size of the logo */
+    height: 40px;
+    margin-right: 15px; /* Space between logo and text */
+    background-color: #ffffff; /* White background for the logo itself */
+    padding: 5px; /* Padding around the logo */
+    border-radius: 50%; /* Make it circular */
+    object-fit: contain; /* Ensure the logo fits without cropping */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow for the logo */
+}
+
+.logo-empresa p {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5em; /* Slightly smaller for mobile */
+    }
+
+    .header p {
+        font-size: 1.2em;
+    }
+
+    .container {
+        padding: 0 1rem 1.5rem 1rem; /* Adjust padding */
+        width: 95%;
+    }
+
+    .carrusel {
+        max-height: 45vh; /* Adjust height for smaller screens */
+        min-height: 250px;
+    }
+
+    section {
+        padding: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    .botones-interactivos .button-group {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center; /* Center stacked buttons */
+    }
+
+    .botones-interactivos .boton-info,
+    .logo-empresa .boton-logo {
+        width: 90%; /* Make buttons take more width on small screens */
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1em;
+    }
+
+    .company-logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 0 0.8rem 1rem 0.8rem;
+    }
+
+    .carrusel {
+        max-height: 40vh; /* Further adjust for very small screens */
+        min-height: 200px;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .boton {
+        padding: 0.6rem 1.2rem;
+        font-size: 1em;
+    }
+}
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ece9e6, #ffffff); /* Light gradient background */
+    color: #333; /* Darker text for readability */
+    line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2c3e50; /* Dark blue, professional */
+    color: #ffffff;
+    padding: 2.5rem 0; /* More vertical padding */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.8em; /* Larger heading */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* Main Container Styles */
+.container {
+    width: 90%;
+    max-width: 1200px; /* Limits width for better readability on large screens */
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px; /* Rounded corners for softness */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+}
+
+/* Carousel Section */
+.carrusel {
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    position: relative; /* Needed for absolute positioning of potential controls */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* Smooth transition for sliding */
+    animation: slideAnimation 15s infinite alternate; /* Continuous sliding animation */
+}
+
+.slider img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover; /* Ensures images cover the area without distortion */
+}
+
+/* Keyframe animation for slider */
+@keyframes slideAnimation {
+    0%, 20% { transform: translateX(0); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(-300%); }
+}
+
+
+/* Section Styling (General) */
+section {
+    background-color: #f9f9f9;
+    padding: 1.8rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 5px solid #3498db; /* A vibrant blue accent */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+section h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ddd; /* Subtle underline */
+    padding-bottom: 0.5rem;
+}
+
+/* Description Section */
+.descripcion p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Tareas Section */
+.tareas ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.tareas li {
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #eee; /* Light dashed separator */
+    font-size: 1.05em;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+
+.tareas li:last-child {
+    border-bottom: none;
+}
+
+.tareas li::before {
+    content: '✅'; /* Custom bullet point */
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Horarios Section */
+.horarios p {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.horarios strong {
+    color: #3498db; /* Highlight days with accent color */
+}
+
+/* Creditos Section */
+.creditos {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9; /* Consistent background */
+    border-left: none; /* Remove left border for this section */
+    box-shadow: none; /* Remove shadow for a cleaner footer look */
+}
+
+.creditos p {
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.95em;
+}
+
+.creditos strong {
+    color: #2c3e50;
+}
+
+/* Button Styling (General) */
+.boton {
+    display: inline-block;
+    background-color: #3498db; /* Blue button */
+    color: #ffffff;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
+}
+
+.boton:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* More pronounced shadow on hover */
+}
+
+.boton:active {
+    transform: translateY(0); /* Press effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Specific button group for info buttons */
+.botones-interactivos .button-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 15px; /* Space between buttons */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 1rem;
+}
+
+.botones-interactivos .boton-info {
+    background-color: #28a745; /* Green for info buttons */
+    color: #ffffff;
+    padding: 1rem 2rem; /* Larger padding for these buttons */
+    font-size: 1.2em;
+    text-align: center; /* Ensure text is centered */
+}
+
+.botones-interactivos .boton-info:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Logo button styling */
+.logo-empresa {
+    text-align: center;
+    border-left: none; /* No left border here */
+}
+
+.logo-empresa .boton-logo {
+    display: flex; /* Allows logo and text to be side-by-side */
+    align-items: center; /* Vertically align items */
+    justify-content: center; /* Center content horizontally */
+    background-color: #6c757d; /* Gray for institutional button */
+    color: #ffffff;
+    padding: 1rem 2.5rem; /* Ample padding */
+    font-size: 1.3em; /* Larger font size */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow for main action */
+}
+
+.logo-empresa .boton-logo:hover {
+    background-color: #5a6268; /* Darker gray on hover */
+    transform: translateY(-3px); /* Stronger lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.company-logo {
+    width: 40px; /* Size of the logo */
+    height: 40px;
+    margin-right: 15px; /* Space between logo and text */
+    background-color: #ffffff; /* White background for the logo itself */
+    padding: 5px; /* Padding around the logo */
+    border-radius: 50%; /* Make it circular */
+    object-fit: contain; /* Ensure the logo fits without cropping */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Small shadow for the logo */
+}
+
+.logo-empresa p {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header p {
+        font-size: 1em;
+    }
+
+    .container {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    section {
+        padding: 1.2rem;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    .botones-interactivos .button-group {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center; /* Center stacked buttons */
+    }
+
+    .botones-interactivos .boton-info,
+    .logo-empresa .boton-logo {
+        width: 90%; /* Make buttons take more width on small screens */
+        padding: 0.8rem 1.5rem;
+        font-size: 1.1em;
+    }
+
+    .company-logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+
+    .header p {
+        font-size: 0.9em;
+    }
+
+    .container {
+        padding: 0.8rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
+
+    .boton {
+        padding: 0.6rem 1.2rem;
+        font-size: 1em;
+    }
+}
